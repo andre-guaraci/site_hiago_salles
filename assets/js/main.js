@@ -89,3 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === modal) modal.style.display = 'none';
   });
 });
+
+// === Alternar tema para "Covil Noturno" após as 18h ===
+document.addEventListener('DOMContentLoaded', () => {
+  const hour = new Date().getHours();
+  const depoimentos = document.querySelector('.depoimentos');
+  if (hour >= 18 || hour < 6) {
+    depoimentos.classList.add('theme-night');
+  }
+});

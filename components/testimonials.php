@@ -3,7 +3,7 @@
 ?>
 
 <section id="depoimentos" class="section depoimentos">
-  <h2>Iniciados que já transformaram suas jornadas</h2>
+  <h2>Alunos que já transformaram suas jornadas</h2>
   <p>Depoimentos reais de quem se conectou com o Covil do Pai Hiago e vive essa experiência espiritual.</p>
 
   <div class="swiper depoimentos-swiper">

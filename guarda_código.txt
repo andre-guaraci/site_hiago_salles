@@ -28,3 +28,150 @@ footer.php
 
 
 end of footer.php
+
+
+/* ======================================================
+   COMPONENTE: DEPOIMENTOS (EFEITO FADE + AURA DOURADA)
+   ====================================================== */
+.depoimentos {
+  position: relative;
+  text-align: center;
+  color: #f8f8f8;
+  margin: 6rem auto;
+  padding: 4rem 1rem;
+  max-width: 900px;
+  border-top: 1px solid rgba(218,165,32,0.25);
+  border-bottom: 1px solid rgba(218,165,32,0.25);
+
+  /* Fundo com profundidade e textura leve */
+  background: linear-gradient(180deg, #000 0%, #1a0f0a 40%, #000 100%);
+  background-image: url('/assets/img/pattern.png'); /* textura opcional */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.6);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* Luz suave no topo e base */
+.depoimentos::before,
+.depoimentos::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.depoimentos::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(218,165,32,0.15), transparent);
+}
+
+.depoimentos::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(218,165,32,0.1), transparent);
+}
+
+.depoimentos h2 {
+  color: #ffd700;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 12px rgba(218,165,32,0.5);
+}
+
+.depoimentos p {
+  color: #ccc;
+  margin-bottom: 2.5rem;
+  font-size: 1rem;
+}
+
+/* Swiper slides */
+.depoimento-item {
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(218, 165, 32, 0.25);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 30px rgba(218,165,32,0.15);
+  transition: all 0.6s ease;
+}
+
+.depoimento-item .texto {
+  font-style: italic;
+  color: #eee;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.depoimento-item .autor {
+  color: #daa520;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.depoimento-item .ver-print {
+  color: #fff;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(218,165,32,0.5);
+  transition: color 0.3s ease;
+}
+
+.depoimento-item .ver-print:hover {
+  color: #daa520;
+}
+
+/* Fade effect + animação de texto */
+.depoimentos-swiper .swiper-slide {
+  opacity: 0 !important;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.depoimentos-swiper .swiper-slide-active {
+  opacity: 1 !important;
+  animation: auraGold 4s ease-in-out infinite alternate;
+}
+
+@keyframes auraGold {
+  from { box-shadow: 0 0 15px rgba(218,165,32,0.15); }
+  to { box-shadow: 0 0 35px rgba(255,215,0,0.35); }
+}
+
+.depoimentos-swiper .swiper-slide-active .texto {
+  animation: fadeInText 2s ease-in-out;
+}
+
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Swiper buttons & pagination */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #daa520;
+  filter: drop-shadow(0 0 5px rgba(218,165,32,0.6));
+}
+
+.swiper-pagination-bullet {
+  background: #daa520;
+  opacity: 0.6;
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffd700;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .depoimento-item {
+    padding: 1.5rem;
+  }
+}

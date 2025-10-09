@@ -34,15 +34,6 @@ function validate_csrf_token($token) {
     return false;
 }
 
-/**
- * Função para limpar e escapar entradas do usuário.
- *
- * @param string $data
- * @return string
- */
-function sanitize_input($data) {
-    return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
-}
 
 /**
  * Redirecionamento seguro.

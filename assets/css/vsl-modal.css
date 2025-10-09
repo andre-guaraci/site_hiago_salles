@@ -1,0 +1,23 @@
+/* ===== Modal VSL (acessível, sem dependências) ===== */
+.modal-vsl{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.65);opacity:0;visibility:hidden;transition:.25s;z-index:1000}
+.modal-vsl.is-open{opacity:1;visibility:visible}
+.modal-vsl__overlay{position:absolute;inset:0}
+.modal-vsl__dialog{position:relative;width:min(960px,92vw);max-height:88vh;background:#111;
+  border:1px solid #daa520;border-radius:14px;box-shadow:0 0 30px rgba(218,165,32,.25);
+  overflow:hidden;transform:translateY(12px);transition:transform .25s}
+.modal-vsl.is-open .modal-vsl__dialog{transform:translateY(0)}
+.modal-vsl__close{position:absolute;top:10px;right:12px;font-size:28px;line-height:1;color:#ffd700;
+  background:transparent;border:0;cursor:pointer}
+.modal-vsl__body{padding:14px 16px 18px}
+.ratio-16x9{position:relative;width:100%;padding-top:56.25%}
+.ratio-16x9 iframe,.ratio-16x9 video{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:10px}
+.modal-vsl__cta{display:flex;justify-content:center;margin-top:14px}
+.btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;
+  padding:14px 22px;border-radius:999px;background:#daa520;color:#000;font-weight:700;
+  text-decoration:none;box-shadow:0 6px 20px rgba(218,165,32,.35);transition:transform .15s}
+.btn-cta:hover{transform:translateY(-1px)}
+body.vsl-no-scroll{overflow:hidden}
+@media (prefers-reduced-motion: reduce){
+  .modal-vsl,.modal-vsl__dialog{transition:none}
+}

@@ -570,7 +570,7 @@ input, button {
   top: 10px;
   right: 15px;
   font-size: 1.5rem;
-  color: #ffd700;
+  color: #ff0000;
   cursor: pointer;
 }
 
@@ -581,7 +581,7 @@ input, button {
 /* === Botões Swiper === */
 .swiper-button-next,
 .swiper-button-prev {
-  color: #daa520;
+  color: #203cda;
   filter: drop-shadow(0 0 5px rgba(218,165,32,0.6));
   top: 50%;
   transform: translateY(-50%);
@@ -612,6 +612,118 @@ input, button {
   animation: goldenPulse 5s ease-in-out infinite alternate;
   transform: scale(1);
 }
+
+/* ======================================================
+   TEMA ALTERNATIVO: “COVIL NOTURNO”
+   ======================================================
+   Ative adicionando a classe .theme-night ao body
+   ou à seção .depoimentos
+====================================================== */
+
+.theme-night .depoimentos {
+  color: #f8f8f8;
+  background: radial-gradient(circle at center, #100000 0%, #000 100%);
+  border-top: 1px solid rgba(255,0,0,0.15);
+  border-bottom: 1px solid rgba(255,0,0,0.15);
+}
+
+.theme-night .depoimentos h2 {
+  color: #ff3838;
+  text-shadow: 0 0 25px rgba(255,0,0,0.4);
+}
+
+.theme-night .depoimento-item {
+  background: linear-gradient(145deg, rgba(20,0,0,0.95), rgba(0,0,0,0.98));
+  border: 1px solid rgba(255,0,0,0.3);
+  box-shadow: 0 0 30px rgba(255,0,0,0.25);
+  animation: redAura 5s ease-in-out infinite alternate;
+}
+
+.theme-night .depoimento-item blockquote {
+  color: #ffeaea;
+  text-shadow: 0 0 10px rgba(255,0,0,0.2);
+}
+
+.theme-night .autor {
+  color: #ff3838;
+}
+
+.theme-night .ver-print {
+  border: 1px solid rgba(255,0,0,0.5);
+  color: #ff5959;
+}
+
+.theme-night .ver-print:hover {
+  background: #ff3838;
+  color: #000;
+  box-shadow: 0 0 15px rgba(255,0,0,0.6);
+}
+
+/* === Aura rubi “viva” no card ativo === */
+.theme-night .swiper-slide-active .depoimento-item::before {
+  content: "";
+  position: absolute;
+  inset: -5%;
+  border-radius: 20px;
+  background: radial-gradient(circle at center,
+    rgba(255,0,0,0.18) 0%,
+    rgba(0,0,0,0.9) 80%);
+  filter: blur(20px);
+  z-index: -1;
+  animation: auraRubi 6s infinite ease-in-out alternate;
+}
+
+/* === Animação da aura rubi === */
+@keyframes auraRubi {
+  0% { opacity: 0.5; transform: scale(1); filter: blur(18px); }
+  100% { opacity: 0.9; transform: scale(1.08); filter: blur(22px); }
+}
+
+/* === Pulsação vermelho + dourado === */
+@keyframes redAura {
+  0% {
+    box-shadow:
+      0 0 20px rgba(255,0,0,0.2),
+      0 0 40px rgba(255,50,0,0.1),
+      inset 0 0 10px rgba(255,80,0,0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 35px rgba(255,0,0,0.4),
+      0 0 70px rgba(255,70,0,0.3),
+      inset 0 0 20px rgba(255,100,0,0.25);
+  }
+  100% {
+    box-shadow:
+      0 0 25px rgba(255,0,0,0.3),
+      0 0 50px rgba(255,50,0,0.2),
+      inset 0 0 15px rgba(255,70,0,0.2);
+  }
+}
+
+/* === Botões noturnos === */
+.theme-night .swiper-button-next,
+.theme-night .swiper-button-prev {
+  color: #ff3838;
+  filter: drop-shadow(0 0 8px rgba(255,0,0,0.6));
+}
+
+.theme-night .swiper-button-next:hover,
+.theme-night .swiper-button-prev:hover {
+  color: #ffae00;
+  filter: drop-shadow(0 0 12px rgba(255,80,0,0.8));
+}
+
+.theme-night .swiper-pagination-bullet {
+  background: #ff3838;
+  opacity: 0.7;
+}
+
+.theme-night .swiper-pagination-bullet-active {
+  background: #ffae00;
+  opacity: 1;
+}
+/*Fim do theme alternativo night*/
 
 /* --- Efeito de pulsação de luz suave --- */
 @keyframes goldenPulse {

@@ -1,0 +1,175 @@
+/* =========================================================
+   SEÇÃO DE PLANOS - COVIL DO PAI HIAGO
+   ========================================================= */
+
+.planos-section {
+  background: linear-gradient(180deg, #000 0%, #111 100%);
+  color: #f5f5f5;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  color: #ffd700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.section-subtitle {
+  color: #ccc;
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+.planos-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.plano-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(218,165,32,0.4);
+  border-radius: 14px;
+  padding: 2rem;
+  width: min(340px, 90%);
+  box-shadow: 0 0 20px rgba(218,165,32,0.15);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.plano-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px rgba(218,165,32,0.35);
+}
+
+.plano-titulo {
+  color: #ffd700;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.plano-desc {
+  color: #ddd;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.plano-preco {
+  font-size: 1.8rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.plano-preco span {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.btn-plano {
+  display: inline-block;
+  background: #daa520;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(218,165,32,0.4);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.btn-plano:hover {
+  transform: scale(1.05);
+  background: #ffd700;
+}
+
+.destaque {
+  border-color: #ffd700;
+  background: linear-gradient(180deg, #222 0%, #111 100%);
+}
+
+.plano-selo {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffd700;
+  color: #000;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 4px 12px;
+  border-radius: 999px;
+  box-shadow: 0 0 15px rgba(255,215,0,0.6);
+}
+
+/* ===== Animações ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   ✨ EFEITO DE BRILHO DOURADO (AURA MÍSTICA)
+   ========================================================= */
+
+/* Criamos um halo dourado pulsante em volta do plano em destaque */
+
+body {
+  background-color: #000;
+  background-image: radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.08) 0%, transparent 60%),
+                    radial-gradient(circle at 80% 80%, rgba(218, 165, 32, 0.05) 0%, transparent 70%);
+  background-attachment: fixed;
+}
+
+.plano-card.destaque::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 16px;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 215, 0, 0.7),
+    rgba(218, 165, 32, 0.1),
+    rgba(255, 215, 0, 0.7)
+  );
+  background-size: 300% 300%;
+  animation: brilhoMistico 6s linear infinite;
+  filter: blur(12px);
+  opacity: 0.8;
+  z-index: -1;
+}
+
+@keyframes brilhoMistico {
+  0% {
+    background-position: 0% 50%;
+    opacity: 0.6;
+  }
+  50% {
+    background-position: 100% 50%;
+    opacity: 1;
+  }
+  100% {
+    background-position: 0% 50%;
+    opacity: 0.6;
+  }
+}
+
+/* Ajuste para manter a hierarquia visual */
+.plano-card.destaque {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.7);
+  z-index: 2;
+}

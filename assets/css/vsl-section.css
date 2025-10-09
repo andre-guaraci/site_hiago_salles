@@ -1,0 +1,108 @@
+/* =========================================================
+   SEÇÃO VSL — Covil do Pai Hiago
+   ========================================================= */
+.vsl-section {
+  position: relative;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  color: #f5f5f5;
+  overflow: hidden;
+}
+
+.vsl-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/assets/img/bg-ritual.jpg") center/cover no-repeat;
+  opacity: 0.15;
+  z-index: 0;
+}
+
+.vsl-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 1px solid rgba(218,165,32,0.4);
+  border-radius: 12px;
+  background: rgba(0,0,0,0.6);
+  box-shadow: 0 0 30px rgba(218,165,32,0.25);
+}
+
+.vsl-title {
+  font-family: 'Cinzel', serif;
+  color: #ffd700;
+  font-size: 1.9rem;
+}
+
+.vsl-subtitle {
+  color: #ccc;
+  font-size: 1.1rem;
+}
+
+.vsl-thumbnail {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(218,165,32,0.4);
+  box-shadow: 0 0 25px rgba(218,165,32,0.3);
+  transition: transform 0.3s ease;
+}
+
+.vsl-thumb-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+}
+
+.vsl-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, #ffd700 0%, #daa520 60%, #000 100%);
+  color: #000;
+  font-size: 2rem;
+  border: none;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  box-shadow: 0 0 25px rgba(255,215,0,0.6);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.vsl-play-btn:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  box-shadow: 0 0 40px rgba(255,215,0,0.8);
+}
+
+.btn-cta {
+  display: inline-block;
+  background: #daa520;
+  color: #000;
+  padding: 14px 26px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(218,165,32,0.5);
+  transition: transform 0.2s;
+}
+
+.btn-cta:hover {
+  transform: scale(1.05);
+  background: #ffd700;
+}
+
+/* ✨ Pulsar suave no CTA */
+.pulse {
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(218,165,32,0.3); }
+  70% { transform: scale(1.04); box-shadow: 0 0 25px rgba(218,165,32,0.6); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(218,165,32,0.3); }
+}
+
