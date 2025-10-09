@@ -7,6 +7,10 @@
 // 🔹 Envia e-book por e-mail via PHPMailer
 // 🔹 Registra logs de cada etapa
 // ======================================================
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once __DIR__ . '/helpers/env_loader.php';
 loadEnv();
 require_once __DIR__ . '/utils.php';

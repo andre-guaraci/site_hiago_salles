@@ -20,9 +20,9 @@ $context = 'CONFIG';
 try {
     $config = [
         'site_name'     => getenv('SITE_NAME')     ?: 'Covil do Pai Hiago',
-        'admin_email'   => getenv('ADMIN_EMAIL')   ?: 'contato@seudominio.com',
-        'hotmart_link'  => getenv('HOTMART_LINK')  ?: 'https://go.hotmart.com/SEU_LINK_HOTMART',
-        'ebook_link'    => getenv('EBOOK_LINK')    ?: 'https://seudominio.com/brindes/seu-ebook.pdf',
+        'admin_email'   => getenv('ADMIN_EMAIL')   ?: 'contato@paihiagosalles.com.br',
+        'hotmart_link'  => getenv('HOTMART_LINK')  ?: 'https://covildopaihiago.hotmart.host/aprendadeverdade',
+        'ebook_link'    => getenv('EBOOK_LINK')    ?: 'https://paihiagosalles.com/brindes/eBook Covil.pdf',
         'hotmart_token' => getenv('HOTMART_TOKEN') ?: '',
     ];
 
