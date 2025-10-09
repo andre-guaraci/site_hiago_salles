@@ -1,0 +1,675 @@
+
+/* === Efeito de header scrolled === */
+.site__header.scrolled {
+  background: rgba(0,0,0,0.9);
+  box-shadow: 0 0 25px rgba(218,165,32,0.25);
+  border-bottom-color: rgba(218,165,32,0.4);
+  transition: all 0.4s ease;
+}
+
+/* === Fade-in ao rolar === */
+.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.9s ease;
+}
+
+.section, .hero__content, .btn {
+  opacity: 1;
+  transform: translateY(20px);
+}
+
+/* === Botão pulsando === */
+.btn-pulse {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+@keyframes pulseSoft {
+  0%, 100% { box-shadow: 0 0 15px rgba(218,165,32,0.25); transform: scale(1); }
+  50% { box-shadow: 0 0 30px rgba(218,165,32,0.6); transform: scale(1.05); }
+}
+
+/* === Hero Section === */
+.hero {
+  min-height: 100vh;
+  background: radial-gradient(circle at center,var(--dark-red) 0%,var(--black) 90%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('/assets/img/pattern.png') repeat center;
+  opacity: 0.03;
+  mix-blend-mode: overlay;
+}
+
+.hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  animation: fadeIn 1.8s ease;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(218,165,32,0.4);
+}
+
+.hero__subtitle {
+  color: var(--royal);
+  font-weight: 600;
+  display: block;
+  margin-top: .5rem;
+}
+
+.hero__lead {
+  margin: 1.2rem 0 2rem;
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 700px;
+}
+
+.hero__actions .btn {
+  margin: .5rem;
+}
+
+/* === Sections === */
+
+.section {
+  padding: 5rem 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.section h2 {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section p {
+  color: var(--muted);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.section + .section {
+  margin-top: 3rem;
+}
+
+/* === Testimonials === */
+.testimonials__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.testimonial {
+  background: linear-gradient(145deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));
+  border: 1px solid rgba(218,165,32,0.15);
+  border-radius: 10px;
+  padding: 1.2rem;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 0 15px rgba(218,165,32,0.1);
+  transition: transform .3s ease;
+}
+
+.testimonial:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial footer {
+  color: var(--royal);
+  font-weight: 600;
+  margin-top: .8rem;
+}
+
+/* === CTA Section === */
+.section--cta {
+  background: linear-gradient(180deg,#0a0000 0%, #150000 90%);
+  text-align: center;
+  border-top: 1px solid rgba(218,165,32,0.25);
+  padding: 4rem 1rem;         /* adiciona respiro vertical */
+  position: relative;         /* garante empilhamento normal */
+  z-index: 1;
+}
+
+.section--cta .cta__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section--cta h2 {
+  color: var(--gold);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.section--cta p {
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.section--cta .btn {
+  margin-top: 1rem;
+}
+
+/* === Form === */
+.form {
+  max-width: 450px;
+  margin: 2rem auto;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+input {
+  width: 100%;
+  padding: .8rem;
+  margin-top: .3rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.05);
+  color: var(--white);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 8px rgba(218,165,32,0.4);
+}
+
+.alert--error {
+  background: rgba(192,0,0,0.15);
+  padding: 1rem;
+  border-left: 4px solid var(--red);
+  color: var(--red);
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+}
+
+.alert--success {
+  background: rgba(0, 128, 0, 0.15);
+  padding: 1rem;
+  border-left: 4px solid #00c851;
+  color: #00c851;
+  margin-bottom: 1.5rem;
+  border-radius: 6px;
+}
+
+/*input, button {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}*/
+
+
+/* === Selo Premium === */
+.seal-premium {
+  position: fixed;
+  bottom: 20px;
+  right: 25px;
+  z-index: 999;
+  animation: fadeInSeal 2s ease;
+}
+
+.seal-circle {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: radial-gradient(circle at center, rgba(218,165,32,0.12), rgba(0,0,0,0.8));
+  border: 1px solid rgba(218,165,32,0.5);
+  border-radius: 50px;
+  padding: 0.5rem 0.9rem;
+  color: var(--gold);
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 0 15px rgba(218,165,32,0.3);
+  cursor: default;
+  backdrop-filter: blur(4px);
+  transition: all 0.4s ease;
+}
+
+.seal-circle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(218,165,32,0.55);
+}
+
+.seal-icon {
+  width: 28px;
+  height: 28px;
+  filter: drop-shadow(0 0 4px rgba(218,165,32,0.6));
+  animation: pulseGold 3s infinite ease-in-out;
+}
+
+/* === Animações === */
+@keyframes fadeIn {from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulseGold {0%,100%{opacity:.8;transform:scale(1);}50%{opacity:1;transform:scale(1.1);}}
+@keyframes fadeInSeal {from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+
+form, label, input, button {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  color: white !important;
+}
+
+input, button {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 0.8rem;
+  border-radius: 6px;
+}
+
+/* =============================
+   Estilo do formulário de brinde
+   ============================= */
+#brindeForm {
+  max-width: 450px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#brindeForm label {
+  font-weight: 600;
+  color: #daa520; /* Dourado do Covil */
+  margin-bottom: 0.3rem;
+}
+
+#brindeForm input {
+  background-color: #111;  /* Fundo visível sobre o preto */
+  border: 1px solid #daa520;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+#brindeForm input::placeholder {
+  color: #bbb;
+}
+
+#brindeForm button {
+  background-color: #daa520;
+  color: #000;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#brindeForm button:hover {
+  background-color: #ffd700;
+}
+
+.section.container,
+#brindeForm,
+#brindeForm * {
+  position: relative !important;
+  z-index: 10 !important;
+}
+
+/* =======================================================
+   ALERTAS — Covil do Pai Hiago
+   ======================================================= */
+
+.alert {
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  margin: 1.2rem 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  position: relative;
+  box-shadow: 0 0 15px rgba(218, 165, 32, 0.1);
+  animation: fadeInAlert 0.8s ease-out;
+}
+
+/* Sucesso (ex: brinde enviado) */
+.alert--success {
+  background: linear-gradient(145deg, #0d0d0d 0%, #1a1a1a 100%);
+  border-left: 4px solid #daa520;
+  color: #f0e6b6;
+  box-shadow: 0 0 10px rgba(218, 165, 32, 0.3);
+}
+
+/* Erro (ex: campos obrigatórios faltando) */
+.alert--error {
+  background: linear-gradient(145deg, #1a0000 0%, #260000 100%);
+  border-left: 4px solid #a00000;
+  color: #ffdddd;
+  box-shadow: 0 0 10px rgba(160, 0, 0, 0.3);
+}
+
+/* Pequena animação de entrada */
+@keyframes fadeInAlert {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade e ajuste de texto */
+@media (max-width: 600px) {
+  .alert {
+    font-size: 0.9rem;
+    padding: 0.9rem;
+  }
+}
+
+/* =============================
+   BOTÃO "ENTRAR PARA O COVIL"
+   ============================= */
+.btn-covil {
+  background: linear-gradient(90deg, #116400, #1ef302);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  animation: pulseCovil 2.2s infinite;
+}
+
+/* Animação de pulsar */
+@keyframes pulseCovil {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 8px #16fc018a;
+  }
+  50% {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #16fc018a;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 8px #16fc018a;
+  }
+}
+
+/* Pequena elevação no hover */
+.btn-covil:hover {
+  transform: scale(1.1);
+}
+
+/* ======================================================
+   COMPONENTE: DEPOIMENTOS (1 CARD, FADE, MODAL)
+   ====================================================== */
+
+.depoimentos {
+  text-align: center;
+  color: #f8f8f8;
+  padding: 4rem 1rem;
+  max-width: 900px;
+  margin: 6rem auto;
+}
+
+.depoimentos h2 {
+  color: #ffd700;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+  text-shadow: 0 0 12px rgba(218,165,32,0.5);
+}
+
+.depoimentos p {
+  color: #ccc;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+}
+
+.depoimentos-swiper {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* === Apenas 1 card visível === */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1.2s ease, visibility 0s linear 1.2s;
+}
+
+.swiper-slide.swiper-slide-active {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.depoimento-item {
+  background: linear-gradient(145deg, rgba(20, 10, 0, 0.9), rgba(0, 0, 0, 0.95));
+  border: 1px solid rgba(218,165,32,0.4);
+  border-radius: 18px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 0 30px rgba(218,165,32,0.25);
+  color: #f9f9f9;
+  max-width: 600px;
+  text-align: center;
+  animation: goldenAura 4s ease-in-out infinite alternate;
+}
+
+@keyframes goldenAura {
+  from { box-shadow: 0 0 20px rgba(218,165,32,0.2); }
+  to { box-shadow: 0 0 35px rgba(255,215,0,0.4); }
+}
+
+.depoimento-item blockquote {
+  font-style: italic;
+  line-height: 1.6;
+  color: #eee;
+  margin-bottom: 1.5rem;
+}
+
+.autor-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.autor-foto {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  border: 2px solid #daa520;
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(218,165,32,0.4);
+}
+
+.autor {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.local {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.ver-print {
+  background: none;
+  border: 1px solid rgba(218,165,32,0.6);
+  border-radius: 30px;
+  padding: 0.6rem 1.2rem;
+  color: #ffd700;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+}
+
+.ver-print:hover {
+  background: #ffd700;
+  color: #000;
+  box-shadow: 0 0 15px rgba(255,215,0,0.5);
+}
+
+/* === Modal === */
+.print-modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(6px);
+  justify-content: center;
+  align-items: center;
+}
+
+.print-modal-content {
+  background: #000;
+  border: 1px solid rgba(218,165,32,0.3);
+  border-radius: 12px;
+  max-width: 600px;
+  padding: 1rem;
+  position: relative;
+}
+
+.print-modal-content img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: #ffd700;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #fff;
+}
+
+/* === Botões Swiper === */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #daa520;
+  filter: drop-shadow(0 0 5px rgba(218,165,32,0.6));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 15;
+  transition: all 0.3s ease;
+}
+
+.swiper-button-prev { left: -60px; }
+.swiper-button-next { right: -60px; }
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  color: #ffd700;
+  filter: drop-shadow(0 0 10px rgba(255,215,0,0.7));
+}
+
+.swiper-pagination {
+  margin-top: 1.5rem;
+}
+
+/* ======================================================
+   EFEITOS PREMIUM — AURA DOURADA DINÂMICA
+   ====================================================== */
+
+/* --- Card ativo ganha energia dourada pulsante --- */
+.swiper-slide-active .depoimento-item {
+  position: relative;
+  animation: goldenPulse 5s ease-in-out infinite alternate;
+  transform: scale(1);
+}
+
+/* --- Efeito de pulsação de luz suave --- */
+@keyframes goldenPulse {
+  0% {
+    box-shadow:
+      0 0 20px rgba(218,165,32,0.2),
+      0 0 40px rgba(255,215,0,0.15),
+      inset 0 0 10px rgba(218,165,32,0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(218,165,32,0.4),
+      0 0 60px rgba(255,215,0,0.3),
+      inset 0 0 20px rgba(218,165,32,0.2);
+  }
+  100% {
+    box-shadow:
+      0 0 25px rgba(218,165,32,0.3),
+      0 0 45px rgba(255,215,0,0.2),
+      inset 0 0 15px rgba(218,165,32,0.15);
+  }
+}
+
+/* --- Reação ao hover: o ouro se intensifica --- */
+.depoimento-item:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 40px rgba(255,215,0,0.5),
+    0 0 80px rgba(218,165,32,0.25),
+    inset 0 0 25px rgba(255,215,0,0.2);
+  transition: all 0.6s ease;
+}
+
+/* --- Fundo aurático sutil no card ativo --- */
+.swiper-slide-active .depoimento-item::before {
+  content: "";
+  position: absolute;
+  inset: -5%;
+  background: radial-gradient(circle at center,
+    rgba(255,215,0,0.12) 0%,
+    rgba(0,0,0,0.9) 80%);
+  border-radius: 20px;
+  filter: blur(25px);
+  z-index: -1;
+  animation: auraFlow 6s infinite ease-in-out alternate;
+}
+
+/* --- Animação da aura “respirando” --- */
+@keyframes auraFlow {
+  0% { opacity: 0.5; transform: scale(1); }
+  100% { opacity: 0.9; transform: scale(1.08); }
+}
+
+/* --- Suaviza o fade entre depoimentos --- */
+.swiper-slide {
+  transition: opacity 1.2s ease, visibility 0.4s linear 1.2s, transform 0.8s ease;
+}
+
+.swiper-slide-active {
+  transform: scale(1.03);
+}

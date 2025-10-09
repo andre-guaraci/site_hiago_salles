@@ -1,0 +1,19 @@
+@media (max-width: 900px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .seal-premium {
+    bottom: 15px;
+    right: 15px;
+    transform: scale(0.85);
+  }
+
+  .seal-circle span {
+    display: none; /* Mostra só o ícone no celular */
+  }
+}

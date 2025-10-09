@@ -1,0 +1,111 @@
+/* === Containers === */
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+/* === Header === */
+.site__header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(218,165,32,0.25);
+  box-shadow: 0 0 20px rgba(218,165,32,0.15);
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(218,165,32,0.4);
+}
+
+/* === Navegação === */
+.nav a {
+  margin-left: 1.5rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--red);
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* === Botões === */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 1.4rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.35s ease;
+}
+
+.btn--primary {
+  background: linear-gradient(90deg,var(--red),#8b0000);
+  color: var(--white);
+  box-shadow: 0 0 20px rgba(192,0,0,0.35);
+}
+
+.btn--primary:hover {
+  background: linear-gradient(90deg,#b30000,var(--red));
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(218,165,32,0.45);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+.btn--ghost:hover {
+  background: var(--gold);
+  color: var(--black);
+  box-shadow: 0 0 15px rgba(218,165,32,0.6);
+}
+
+/* === Footer === */
+.site__footer {
+  background: #090000;
+  border-top: 1px solid rgba(218,165,32,0.25);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: .95rem;  
+  position: relative;  /* <- mantém fluxo normal */
+  z-index: 2;          /* fica acima do fundo da seção anterior */
+}
+
+.site__footer p:first-child {
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: .5px;
+}

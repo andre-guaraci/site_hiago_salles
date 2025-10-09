@@ -1,0 +1,18 @@
+# CONFIG
+/config/config.php
+/config/.env
+
+# LOGS & DATA
+/logs/*
+!/logs/.gitignore
+/data/*
+!/data/.gitignore
+
+# SYSTEM / IDE
+.vscode/
+.DS_Store
+Thumbs.db
+
+# NODE / BUILD (se usar futuramente)
+node_modules/
+dist/

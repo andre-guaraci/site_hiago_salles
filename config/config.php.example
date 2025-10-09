@@ -1,7 +1,4 @@
 <?php
-$hotmart_token = getenv('HOTMART_TOKEN'); 
-?>
-<?php
 // Copie para config.php e preencha com seus dados reais.
 // NÃO comite config.php no repositório.
 

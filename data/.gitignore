@@ -1,0 +1,6 @@
+# logs and data
+/logs/*
+!/logs/.gitignore
+/data/*
+!/data/.gitignore
+
