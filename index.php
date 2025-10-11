@@ -1,53 +1,61 @@
 <?php
-// === Covil do Pai Hiago - Index Principal ===
+// ========================================
+// Covil do Pai Hiago - Página Principal
+// ========================================
 
-// === Enviroment loader ===
+// === Environment loader ===
 require_once __DIR__ . '/helpers/env_loader.php';
 loadEnv();
 
-// utilitários e variáveis globais
+// === Utilitários e variáveis globais ===
 require __DIR__ . '/helpers/utils.php';
 
-// configuração geral do site (links, nome, etc.)
+// === Configuração geral ===
 $config = require __DIR__ . '/config/config.php';
 
-// header padrão
+// === Header padrão ===
 include __DIR__ . '/includes/header.php';
 ?>
 
-<!-- HERO -->
-<?php include __DIR__ . '/components/hero.php'; ?>
+<!-- ================================
+     CONTEÚDO PRINCIPAL
+================================ -->
+<main id="main-content">
 
-<!-- SEÇÃO SOBRE -->
-<?php include __DIR__ . '/components/sobre.php'; ?>
+  <!-- HERO -->
+  <?php include __DIR__ . '/components/hero.php'; ?>
 
-<!-- SEÇÃO DE DEPOIMENTOS -->
-<?php include __DIR__ . '/components/testimonials.php'; ?>
+  <!-- SEÇÃO SOBRE O COVIL -->
+  <?php include __DIR__ . '/components/sobre.php'; ?>
 
-<!-- SEÇÃO VSL -->
-<?php include __DIR__ . '/components/vsl-section.php'; ?>
+  <!-- SEÇÃO DE DEPOIMENTOS -->
+  <?php include __DIR__ . '/components/testimonials.php'; ?>
 
-<!-- SEÇÃO DE PLANOS -->
-<?php include __DIR__ . '/partials/planos.php'; ?>
+  <!-- SEÇÃO VSL -->
+  <?php include __DIR__ . '/components/vsl-section.php'; ?>
 
-<!-- Inclui o modal da VSL -->
-<?php include __DIR__ . '/../partials/modal-vsl.php'; ?>
+  <!-- MODAL DA VSL -->
+  <?php include __DIR__ . '/../partials/modal-vsl.php'; ?>
 
-<!-- ===================== -->
-<!-- SEÇÃO DE PLANOS -->
-<!-- ===================== -->
-<?php include __DIR__ . '/../partials/planos.php'; ?>
+  <!-- SEÇÃO DE PLANOS -->
+  <section id="planos">
+    <?php include __DIR__ . '/partials/planos.php'; ?>
+  </section>
 
-<!-- CTA FINAL -->
-<?php include __DIR__ . '/../components/cta.php'; ?>
+  <!-- CTA FINAL -->
+  <?php include __DIR__ . '/../components/cta.php'; ?>
+
+</main>
 
 <?php
-// rodapé global
+// === Rodapé global ===
 include __DIR__ . '/../includes/footer.php';
 ?>
 
-<!-- Scripts dos módulos -->
-<link rel="stylesheet" href="/assets/css/vsl-modal.css">
-<link rel="stylesheet" href="/assets/css/planos.css">
+<!-- === ESTILOS DOS MÓDULOS === -->
+<link rel="stylesheet" href="/assets/css/vsl-modal.css?v=<?php echo time(); ?>">
+<link rel="stylesheet" href="/assets/css/planos.css?v=<?php echo time(); ?>">
+
+<!-- === SCRIPTS DOS MÓDULOS === -->
 <script src="/assets/js/vsl-modal.js" defer></script>
 <script src="/assets/js/planos.js" defer></script>

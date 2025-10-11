@@ -5,47 +5,51 @@
 @import url('responsive.css');
 
 /* === Variáveis globais === */
-:root {
-  --black: #000;
-  --dark-red: #1a0000;
-  --red: #c00000;
-  --royal: #4169E1;
-  --gold: #DAA520;
-  --white: #fff;
-  --muted: #bcbcbc;
-  --container: 1200px;
-}
+  :root {
+    --black: #000;
+    --dark-red: #1a0000;
+    --red: #c00000;
+    --royal: #4169E1;
+    --gold: #DAA520;
+    --white: #fff;
+    --muted: #bcbcbc;
+    --container: 1200px;
+  }
 
-/* === Base global === */
-html, body {
-  height: 100%;
-  font-family: 'Poppins', system-ui, sans-serif;
-  color: var(--white);
-  background: var(--black);
-  scroll-behavior: smooth;
-}
+body.covil-theme{
 
-/* === Links padrão === */
-a {
-  color: inherit;
-  text-decoration: none;
-  transition: color 0.3s ease, opacity 0.3s ease;
-}
+  /* === Base global === */
+  html, body {
+    height: 100%;
+    font-family: 'Poppins', system-ui, sans-serif;
+    color: var(--white);
+    background: var(--black);
+    scroll-behavior: smooth;
+  }
 
-a:hover {
-  opacity: 0.8;
-}
+  /* === Links padrão === */
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease, opacity 0.3s ease;
+  }
 
-/* === Imagens === */
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
+  a:hover {
+    opacity: 0.8;
+  }
 
-/* === Container padrão === */
-.container {
-  max-width: var(--container);
-  margin: 0 auto;
-  padding: 1rem 2rem;
+  /* === Imagens === */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* === Container padrão === */
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 1rem 2rem;
+  }
+
 }

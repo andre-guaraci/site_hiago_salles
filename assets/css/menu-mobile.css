@@ -1,0 +1,68 @@
+/* ================================
+   MENU MOBILE - Covil do Pai Hiago
+   ================================ */
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 21px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-line {
+  height: 3px;
+  width: 100%;
+  background-color: #DAA520;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.95);
+    width: 80%;
+    height: 100vh;
+    padding-top: 5rem;
+    gap: 1.8rem;
+    transition: right 0.4s ease;
+  }
+
+  .nav a {
+    font-size: 1.1rem;
+    text-align: center;
+    color: #fff !important;
+  }
+
+  .nav.open {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    z-index: 110;
+  }
+
+  /* Esconde o botão principal no mobile */
+  #btn-hotmart {
+    display: none;
+  }
+
+  /* Ícone animado */
+  .menu-toggle.active .menu-line:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .menu-toggle.active .menu-line:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .menu-line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}

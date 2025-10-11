@@ -1,0 +1,184 @@
+/* ================================
+   SOBRE O PAI HIAGO - ESTILOS PRINCIPAIS
+   Arquivo: /assets/css/sobre.css
+===================================*/
+
+.sobre-section {
+  font-family: 'Montserrat', sans-serif;
+  color: #f0f0f0;
+  background-color: #0a0a0a;
+  overflow: hidden;
+}
+
+/* ========== HERO ========== */
+.sobre-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.sobre-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+}
+
+.sobre-hero .container {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+  padding: 2rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.sobre-title {
+  font-size: 3rem;
+  color: #DAA520;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.sobre-subtitle {
+  font-size: 1.25rem;
+  color: #e3e3e3;
+  margin-bottom: 1.5rem;
+}
+
+.sobre-intro {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #ccc;
+}
+
+/* ========== PARALLAX ========== */
+.parallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  opacity: 0.9;
+  transition: opacity 0.6s ease;
+}
+
+.parallax:hover {
+  opacity: 1;
+}
+
+/* ========== BLOCOS DE CONTEÚDO ========== */
+.sobre-bloco {
+  background-color: #111;
+  padding: 5rem 2rem;
+  text-align: left;
+  position: relative;
+}
+
+.sobre-bloco.dark {
+  background-color: #0d0d0d;
+}
+
+.sobre-bloco h3 {
+  color: #DAA520;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+.sobre-bloco p {
+  font-size: 1.1rem;
+  color: #ddd;
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  animation: fadeSlideUp 1.3s ease forwards;
+}
+
+/* ========== CTA ========== */
+.cta-center {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.btn-cta {
+  background: linear-gradient(45deg, #DAA520, #8B0000);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.btn-cta:hover {
+  background: linear-gradient(45deg, #FFD700, #B22222);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(218,165,32,0.5);
+}
+
+/* ========== BLOCO FINAL ========== */
+.sobre-bloco.final {
+  background-color: #000;
+  padding: 6rem 2rem;
+}
+
+.sobre-bloco.final h3 {
+  color: #FFD700;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+/* ========== ANIMAÇÕES ========== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideUp {
+  0% { opacity: 0; transform: translateY(40px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 992px) {
+  .sobre-hero {
+    height: 80vh;
+  }
+  .sobre-title {
+    font-size: 2.3rem;
+  }
+  .sobre-subtitle {
+    font-size: 1rem;
+  }
+  .sobre-bloco {
+    padding: 3.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .sobre-hero {
+    background-attachment: scroll;
+    height: 70vh;
+  }
+  .parallax {
+    background-attachment: scroll;
+    height: 250px;
+  }
+  .sobre-title {
+    font-size: 1.8rem;
+  }
+  .sobre-intro, .sobre-bloco p {
+    font-size: 1rem;
+  }
+}

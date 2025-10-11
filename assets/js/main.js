@@ -98,3 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
     depoimentos.classList.add('theme-night');
   }
 });
+
+// ================================
+// MENU MOBILE (HAMBÚRGUER)
+// ================================
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      toggle.classList.toggle("active");
+      nav.classList.toggle("open");
+    });
+
+    // Fecha o menu ao clicar em um link
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        toggle.classList.remove("active");
+        nav.classList.remove("open");
+      });
+    });
+  }
+});
+

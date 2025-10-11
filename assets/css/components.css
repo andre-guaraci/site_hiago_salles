@@ -785,3 +785,160 @@ input, button {
 .swiper-slide-active {
   transform: scale(1.03);
 }
+
+
+/* -- Estilização do botão sobre o seu mentor--*/
+.sobre-btn-wrapper {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-mentor {
+  display: inline-block;
+  background: linear-gradient(45deg, #DAA520, #8B0000);
+  color: #fff;
+  padding: 1rem 2.5rem;
+  border-radius: 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 15px rgba(218,165,32,0.3);
+}
+
+.btn-mentor:hover {
+  background: linear-gradient(45deg, #FFD700, #B22222);
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(218,165,32,0.5);
+}
+
+
+/* ================================
+   HEADER RESPONSIVO
+================================ */
+.site__header {
+  background-color: #000;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(218,165,32,0.15);
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.brand {
+  color: #DAA520;
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* MENU PRINCIPAL */
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #DAA520;
+}
+
+/* BOTÃO PRINCIPAL */
+.btn-covil {
+  background: linear-gradient(45deg, #DAA520, #8B0000);
+  color: #fff !important;
+  padding: 0.7rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-covil:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px rgba(218,165,32,0.5);
+}
+
+/* ===== MENU HAMBÚRGUER ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 21px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-line {
+  height: 3px;
+  width: 100%;
+  background-color: #DAA520;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.95);
+    width: 80%;
+    height: 100vh;
+    padding-top: 5rem;
+    gap: 1.8rem;
+    transition: right 0.4s ease;
+  }
+
+  .nav a {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  /* Oculta o botão principal no mobile */
+  #btn-hotmart {
+    display: none;
+  }
+
+  .nav.open {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+    z-index: 110;
+  }
+
+  /* Animação do ícone */
+  .menu-toggle.active .menu-line:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .menu-toggle.active .menu-line:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active .menu-line:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+}

@@ -1,0 +1,18 @@
+.aura-scroll {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 215, 0, 0.15) 0%, rgba(0, 0, 0, 0.85) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 9999;
+}
+.aura-scroll.active {
+  opacity: 1;
+  animation: fadeAura 1s ease forwards;
+}
+@keyframes fadeAura {
+  0% { opacity: 0.6; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0; }
+}
